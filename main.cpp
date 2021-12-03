@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-#include "Point.h"
 
 #include "httplib.h"
 #include <string>
@@ -14,19 +13,27 @@ std::string readFile(std::string fp)
 
 int main()
 {
-  
-  cout << readFile("main.cpp") << endl;
-  Point point;
-
-  Point pointP(10,15);
-
-  point.print();
-  pointP.print();
-
   httplib::Server svr;
   auto ret = svr.set_mount_point("/", "./");
-  svr.Get("/", [](const auto &, auto &res) {
-    res.set_content("<html>Hello World!</html>", "text/html");
+  svr.Get("/option", [](const auto &req, auto &res) {
+
+    if (req.has_param("age")) {
+      if(req.has_param("freeOrPaid"))
+      {
+        auto age = req.get_param_value("age");
+        auto wantsFree = req.get_param_value("freeOrPaid");
+        if(wantsFree == "checked")
+        res.set_content(readFile("freeUnder18.html"), "text/html");
+      else
+      res.set_content(readFile("index.html"), "text/html");
+      std::cout<<"hi!\n";
+      std::cout<<wantsFree<<"\n";
+      std::cout<<"hi!\n";
+      std::cout<<age<<"\n";
+      }
+    }
+    else
+    res.set_content(readFile("index.html"), "text/html");
   });
 
   std::cout << "start server..." << std::endl;
