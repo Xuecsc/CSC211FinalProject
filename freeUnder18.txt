@@ -1,0 +1,10 @@
+Sesame_street	https://www.sesamestreet.org/
+scholastic	https://www.scholastic.com/parents/school-success/learn-at-home.html
+PBS_Kids	https://pbskids.org/
+Cool_Math	https://www.coolmath.com/
+Ed_Helper	https://www.edhelper.com/
+National_Geographic	https://kids.nationalgeographic.com/
+How_Stuff_Works	https://www.howstuffworks.com/
+Starfall	https://www.starfall.com/h/
+The_kidz_page	http://thekidzpage.com/
+Fun_Brain	https://www.funbrain.com/

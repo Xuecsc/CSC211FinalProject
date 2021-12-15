@@ -1,0 +1,10 @@
+Coursera	https://www.coursera.org/
+Khanacademy	https://www.khanacademy.org/
+Openculture	https://www.openculture.com/freeonlinecourses
+Udemy	https://www.udemy.com/
+Academicearth	https://academicearth.org/
+Open_Yale_Courses	https://oyc.yale.edu/
+Class_Central	https://www.classcentral.com/
+Standford_Online	https://online.stanford.edu/
+Code_Cademy	https://www.codecademy.com/
+EDX	https://www.edx.org/

@@ -1,7 +1,11 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
+#include "resource.h"
 #include "httplib.h"
+#include "decision.h"
+#include "resourcePageCreator.h"
 #include <string>
 #include <fstream>
 
@@ -16,29 +20,24 @@ int main()
   httplib::Server svr;
   auto ret = svr.set_mount_point("/", "./");
   svr.Get("/option", [](const auto &req, auto &res) {
+  
+  bool over18 = req.has_param("age");
+  bool free = req.has_param("freeOrPaid");
+  decision a;
+  a.setAge(over18);
+  a.setCourseCat(free?"free":"paid");
+  rescourcePageCreator page;
+  page.print();
 
-    if (req.has_param("age")) {
-      if(req.has_param("freeOrPaid"))
-      {
-        auto age = req.get_param_value("age");
-        auto wantsFree = req.get_param_value("freeOrPaid");
-        if(wantsFree == "checked")
-        res.set_content(readFile("freeUnder18.html"), "text/html");
-      else
-      res.set_content(readFile("index.html"), "text/html");
-      std::cout<<"hi!\n";
-      std::cout<<wantsFree<<"\n";
-      std::cout<<"hi!\n";
-      std::cout<<age<<"\n";
-      }
-    }
-    else
-    res.set_content(readFile("index.html"), "text/html");
+  res.set_content(page.getWebpage(a), "text/html");
+  
+
   });
 
   std::cout << "start server..." << std::endl;
   svr.listen("0.0.0.0", 8080);
-  
 }
 
 
+
+  

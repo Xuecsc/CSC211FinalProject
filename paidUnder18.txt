@@ -1,0 +1,6 @@
+Splash_Learn	https://www.splashlearn.com/
+ABC_Mouse	https://www.abcmouse.com/
+Adventure_Academy	https://www.adventureacademy.com/
+Clever_Island	https://cleverisland.com/
+Time_for_Kids	https://www.timeforkids.com/
+Reading_IQ	https://www.readingiq.com/

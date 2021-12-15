@@ -1,0 +1,6 @@
+Udacity	https://www.udacity.com/
+Zybooks	https://learn.zybooks.com/
+Skillshare	https://www.skillshare.com/
+Masterclass	https://www.masterclass.com/
+Straighterline	https://www.straighterline.com/
+Alison	https://alison.com/
