@@ -1,4 +1,5 @@
 #include "resourcePageCreator.h"
+#include <exception>
 
 string& replaceChar(string &str, char origin, char replacement)
 {
@@ -15,13 +16,34 @@ rescourcePageCreator::rescourcePageCreator()
 // free under 18
 inputFile.open("freeUnder18.txt");
 
-if (inputFile.is_open()) {
+  // File IO Exception
+try {
+  if (inputFile.is_open()) {
   string name, website;
   while (inputFile >> name >> website) {
     replaceChar(name,'_', ' ');
     freeUnder18.push_back(Resource(name, website, "Free Under 18"));
   }
+} else {
+  throw "File Exception w/ freeUnder18.txt";
 }
+  }
+}
+catch (string e)
+{
+  cout << "An exception occurred. Exception " << e << '\n';
+}
+
+
+  // if (inputFile.is_open()) {
+  //   string name, website;
+  //   while (inputFile >> name >> website) {
+  //     replaceChar(name,'_', ' ');
+  //     freeUnder18.push_back(Resource(name, website, "Free Under 18"));
+  //   }
+  // }
+
+  
 inputFile.close();
 
 // paid under 18

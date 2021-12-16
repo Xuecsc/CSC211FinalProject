@@ -6,7 +6,7 @@
 #include "decision.h"
 using namespace std;
 
-class rescourcePageCreator{
+class rescourcePageCreator: public resource{
   private:
     vector<Resource> freeUnder18;
     vector<Resource> paidUnder18;
